@@ -1,31 +1,22 @@
-/*  ***o_o*** Custom Propierties ***o_o*** */
-
-:root {
-  --first-color: rgb(0, 105, 153);
-  --first-alpha-color: rgba(0, 105, 153, 0.75);
-  --second-color: rgb(20, 25, 45);
-  --second-alpha-color: rgba(20, 25, 45, 0.75);
-
-  --footer-color: rgb(33, 37, 41);
-
-  --bg-color: rgb(245, 245, 245);
-  --bg-alpha-color: rgba(245, 245, 245, 0.75);
-
-  --form-text-color: rgb(102, 102, 102);
-  --form-success-color: rgb(76, 175, 80);
-  --form-error-color: rgb(244, 67, 54);
-  --form-border-color: rgb(34, 34, 34);
+/*  ***o_o*** Reset Styles ***o_o*** */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  overflow-x: hidden;
 }
 
-/*  ***o_o*** Reset Styles ***o_o*** */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 body {
   font-family: "Roboto", sans-serif;
 }
 
-/*  ***o_o*** My Styles ***o_o*** */
-
-/* Nav */
+/*  ***o_o*** Custom Propierties ***o_o*** */
+/*  ***o_o*** My Styles ***o_o*** Nav */
 .navbar-brand img {
   width: auto;
   height: 3rem;
@@ -35,20 +26,18 @@ body {
 .nav-item {
   transition: all 0.3s ease-out;
 }
-
 .nav-item:hover {
-  background-color: var(--first-alpha-color);
+  background-color: rgba(0, 105, 153, 0.75);
 }
 
 .nav-link {
   margin-left: 0.5rem;
-  color: var(--first-color);
+  color: rgb(0, 105, 153);
   font-size: 1.15rem;
   font-weight: bold;
 }
-
 .nav-link:hover {
-  color: var(--bs-white);
+  color: rgb(255, 255, 255);
 }
 
 .navbar-dark .navbar-toggler {
@@ -61,37 +50,39 @@ body {
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 var(--footer-color);
+  box-shadow: 0 0 0 rgb(33, 37, 41);
 }
 
-/* Footer */
-
+@media (min-width: 992px) {
+  .nav-item:hover {
+    background-color: transparent;
+  }
+}
+/*  ***o_o*** My Styles ***o_o*** Footer */
 .footer {
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 1rem;
-  background-color: var(--footer-color);
-  color: var(--bg-color);
+  background-color: rgb(33, 37, 41);
+  color: rgb(245, 245, 245);
 }
 
 .contacto_iconos a {
-  color: var(--first-color);
+  color: rgb(0, 105, 153);
   transition: all 0.3s ease-out;
   font-size: 1.5rem;
   text-decoration: none;
 }
-
 .contacto_iconos a:hover {
-  color: var(--bs-white);
+  color: rgb(255, 255, 255);
 }
 
 /* **0_0 ** Layout Inicio **o_o** */
-
 .carousel-caption {
   z-index: 1;
-  background-color: var(--second-alpha-color);
-  color: var(--first-color);
+  color: rgb(0, 105, 153);
+  background-color: rgba(20, 25, 45, 0.75);
   border-radius: 1rem;
 }
 
@@ -104,18 +95,16 @@ body {
 }
 
 .carousel-item img {
-  width: 75%;
   height: 75vh;
 }
 
 /* **0_0 ** Layout Sobre Mi **o_o** */
-
 .bg-alpha-color {
-  background-color: var(--bg-alpha-color);
+  background-color: rgba(245, 245, 245, 0.75);
 }
 
 .bg-color {
-  background-color: var(--bg-color);
+  background-color: rgb(245, 245, 245);
 }
 
 .bg-hero-image {
@@ -124,106 +113,135 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+.btn {
+  position: relative;
+  border: none;
+  border-radius: 0.25rem;
+  width: 12rem;
+  height: 2.5rem;
+  padding: 0.2rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.anim-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0.25rem;
+  background-color: rgb(0, 105, 153);
+  transition: width 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+.anim-bottom:hover::after {
+  width: 100%;
+}
+
+.to-center::after {
+  left: 50%;
+}
+
+.to-center:hover::after {
+  left: 0;
+}
+
 /* **0_0 ** Layout Competencia **o_o** */
-
-/* Skill */
-
 .container_skill {
+  width: 4 0%;
   top: 3rem;
   left: 20px;
-  width: 4 0%;
 }
-
-.skill {
+.container_skill .skill {
   padding: 1rem;
 }
-
-.box_skill {
-  color: var(--bg-color);
+.container_skill .skill .box_skill {
   width: 100%;
-  background-color: rgb(220, 220, 220);
-  border-radius: 1rem;
   margin-left: 0.7rem;
   text-align: right;
+  color: rgb(245, 245, 245);
+  background-color: rgb(220, 220, 220);
+  border-radius: 1rem;
 }
 
 .html_skill {
-  width: 80%;
   border-radius: 1rem;
+  width: 80%;
   background-color: rgb(0, 128, 0);
 }
+
 .css {
-  width: 65%;
   border-radius: 1rem;
+  width: 65%;
   background-color: rgb(0, 0, 255);
 }
+
 .js {
-  width: 30%;
   border-radius: 1rem;
+  width: 30%;
   background-color: rgb(255, 0, 0);
 }
 
 .figma {
-  width: 50%;
   border-radius: 1rem;
+  width: 50%;
   background-color: rgb(128, 128, 128);
 }
 
 .macdown {
-  width: 50%;
   border-radius: 1rem;
+  width: 50%;
   background-color: rgb(255, 105, 180);
 }
 
 .tgitgithub {
-  width: 50%;
   border-radius: 1rem;
+  width: 50%;
   background-color: rgb(255, 140, 0);
 }
-
-/* Skill Circle */
 
 .circular {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 48vh;
-  background: --;
   left: 50%;
   top: 50%;
+  min-height: 48vh;
+  background: --;
 }
-
-.container_softSkill {
+.circular .container_softSkill {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 30px;
-  background: var(--first-color);
+  background: rgb(0, 105, 153);
   border: 2px solid rgb(52, 58, 64);
   border-radius: 10px;
 }
-
-span {
-  margin-bottom: 50px;
-  letter-spacing: 2px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.soft_skill {
+.circular .container_softSkill .soft_skill {
   width: 200px;
   height: 200px;
+  margin: 16px;
+  position: relative;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
-  color: var(--bg-color);
+  line-height: 200px;
+  color: rgb(245, 245, 245);
   border-radius: 50%;
   overflow: hidden;
-  position: relative;
   background: rgb(7, 34, 39);
+}
+.circular .container_softSkill .soft_skill span {
+  margin-bottom: 50px;
   text-align: center;
-  line-height: 200px;
-  margin: 20px;
-  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .soft_skill .ability {
@@ -232,20 +250,31 @@ span {
 }
 
 .soft_skill .overlay {
+  position: absolute;
   width: 50%;
   height: 100%;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
   background-color: rgb(7, 34, 39);
 }
 
-.soft_skill .left,
-.soft_skill .right {
+.soft_skill .left {
+  position: absolute;
   width: 50%;
   height: 100%;
+  top: 0;
+  left: 0;
+  border: 8px solid rgb(255, 225, 98);
+  border-radius: 100px 0px 0px 100px;
+  border-right: 0;
+  transform-origin: right;
+}
+
+.soft_skill .right {
   position: absolute;
+  width: 50%;
+  height: 100%;
   top: 0;
   left: 0;
   border: 8px solid rgb(255, 225, 98);
@@ -272,143 +301,126 @@ span {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(180deg);
   }
 }
-
 @keyframes load2 {
   0% {
     z-index: 100;
     transform: rotate(180deg);
   }
-
   100% {
     z-index: 100;
     transform: rotate(270deg);
   }
 }
-
 @keyframes load3 {
   0% {
     z-index: 100;
     transform: rotate(180deg);
   }
-
   100% {
     z-index: 100;
     transform: rotate(315deg);
   }
 }
-
 /* **0_0 ** Layout Portafolio **o_o** */
-
 .card-img {
+  width: 80%;
   border-radius: 30px;
   border: 1px solid rgb(204, 204, 204);
-  width: 80%;
+  transition: opacity 1s ease-out, border-color 3s steps(3), box-shadow 1.5s linear 2s;
 }
-
 .card-img:hover {
-  border: 1px solid rgb(119, 119, 119);
+  box-shadow: 1rem 1rem 2rem 0.5rem #000;
+  border-color: rgb(218, 112, 214);
+  opacity: 75%;
 }
 
-/* **0_0 ** Layout Contacto **o_o** */
+.pulse {
+  animation: pulse 1s linear infinite;
+}
 
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* **0_0 ** Layout Contacto **o_o** */
 .bg-gradient-blue-light {
-  background: rgb(8, 125, 137);
-  background: linear-gradient(
-    135deg,
-    rgba(8, 125, 137, 1) 0%,
-    rgba(227, 227, 232, 0.7147233893557423) 100%,
-    rgba(0, 168, 255, 1) 100%
-  );
+  background: linear-gradient(135deg, rgb(8, 125, 137) 0%, rgba(227, 227, 232, 0.71) 100%, rgb(0, 168, 255) 100%);
 }
 
 .contact-form > * {
   display: block;
   width: 100%;
   margin-bottom: 2rem;
+  padding: 0.5rem;
   font-family: sans-serif;
   font-size: 1rem;
-  padding: 0.5rem;
+  color: rgb(102, 102, 102);
+  caret-color: rgb(0, 105, 153);
+  border: none;
   border-radius: 0.25rem;
-  color: var(--form-text-color);
-  caret-color: var(--first-color);
 }
 
 .contact-form > *::placeholder {
-  color: var(--first-color);
-}
-
-.contact-form input[type="reset"] {
-  margin-bottom: 1;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  background-color: var(--first-color);
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: var(--bg-color);
-}
-
-.contact-form input[type="submit"] {
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-  background-color: var(--first-color);
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: var(--bg-color);
+  color: rgb(0, 105, 153);
 }
 
 .contact-form > *[required]:invalid {
-  border: thin solid var(--form-error-color);
+  border: thin solid rgb(244, 67, 54);
 }
 
 .contact-form > *[required]:valid {
-  border: thin solid var(--form-success-color);
-}
-
-.contact-form input[type="reset"]:hover {
-  cursor: pointer;
-  opacity: 75%;
-}
-
-.contact-form input[type="submit"]:hover {
-  cursor: pointer;
-  opacity: 75%;
+  border: thin solid rgb(76, 175, 80);
 }
 
 .contact-form textarea {
   resize: none;
 }
 
-/* ***o_o*** Media queries ***o_o*** */
-
-/* X-Small devices (portrait phones, less than 576px)
-    // No media query for `xs` since this is the default in Bootstrap */
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+.contact-form input[type=reset] {
+  width: 60%;
+  margin-bottom: 1;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(245, 245, 245);
+  background-image: linear-gradient(to right, rgb(255, 207, 220), rgb(238, 130, 238), rgb(189, 224, 254), rgb(162, 210, 255));
+  background-size: 300% 100%;
+  transition: background-position 0.5s ease-in-out;
+}
+.contact-form input[type=reset]:hover {
+  background-position: 100% 0;
+  opacity: 75%;
+  cursor: pointer;
 }
 
-/*  Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+.contact-form input[type=submit] {
+  width: 30%;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(245, 245, 245);
+  background-image: linear-gradient(to right, rgb(255, 207, 220), rgb(238, 130, 238), rgb(189, 224, 254), rgb(162, 210, 255));
+  background-size: 300% 100%;
+  transition: background-position 0.5s ease-in-out;
+}
+.contact-form input[type=submit]:hover {
+  background-position: 100% 0;
+  opacity: 75%;
+  cursor: pointer;
 }
 
-/*  Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  .nav-item:hover {
-    background-color: transparent;
-  }
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-}
+/*# sourceMappingURL=styles.css.map */
